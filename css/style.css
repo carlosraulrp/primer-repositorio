@@ -1,0 +1,454 @@
+*{
+
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+img{
+    max-width: 100%;
+}
+
+#body-ejemplo{
+    
+    background-color: #688293;
+    display:grid;
+    grid-template-areas:
+    "cabecera"
+    "galeria"
+    "banners"
+    "footer";
+    grid-template-columns: 1fr;
+
+    height: 100vh;
+    
+
+   
+    
+
+}
+
+
+/*body en 768px tablets*/
+
+@media screen and (min-width: 768px) {
+
+    #body-ejemplo{
+        
+        grid-template-areas: 
+        "cabecera cabecera"
+        "galeria galeria"
+        "banners banners"
+        "footer footer";
+
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+    
+}
+/*---------------header-----------------*/
+header{
+    background-color: #506160;
+    grid-area: cabecera;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    
+   
+
+}
+
+/*header para*/
+@media screen and (min-width: 768px){
+
+
+    header{
+        flex-direction: row;
+    }
+
+
+    
+}
+
+.navegacion ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+
+}
+
+/*modificando el nav para tablets*/
+
+@media screen and (min-width: 768px){
+
+
+    .navegacion ul {
+
+        
+        flex-direction: row;
+        margin-left: 3rem;
+        
+        
+    }
+
+
+    
+}
+
+/*nav para desktop 1024px*/
+
+@media screen and (min-width: 1024px){
+
+
+    header{
+        gap: 15rem;
+    }
+
+
+    
+}
+
+@media screen and (min-width: 1024px){
+
+
+    .navegacion ul{
+        gap: 5rem;
+    }
+
+
+    
+}
+
+
+
+
+
+
+nav ul li{
+
+    list-style: none;
+    
+    
+
+}
+
+nav ul li a{
+
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: all .4s;
+    
+
+}
+
+nav ul li a:hover{
+
+    background-color: #000;
+    font-size: 1.8rem;
+    
+    border-radius: 5px;
+    
+
+}
+
+
+
+
+
+/*-----------------------------------*/
+
+#galeria{
+    grid-area: galeria;
+}
+
+#galeria h2{
+    text-align: center;
+    margin: 1rem;
+    font-size: 3rem;
+}
+
+.fotos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/*editando fotos para tablets 768px*/
+
+
+@media screen and (min-width: 768px){
+
+
+    .fotos{
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        column-gap: 1rem;
+    }
+
+
+    
+}
+
+@media screen and (min-width: 1024px){
+
+
+    .fotos{
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        column-gap: 1rem;
+    }
+
+
+    
+}
+
+
+
+.fotos img{
+
+    width: 20rem;
+    height: 10rem;
+    transition: all .3s;
+
+
+}
+
+
+
+#banners{
+
+    grid-area: banners;
+}
+
+#banners h3{
+    text-align: center;
+    margin: 2rem;
+    font-size: 2rem;
+}
+
+.banners-padre{
+
+    background-color: #aebd38;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/*modificando banners padre para tablets y escritorio*/
+
+@media screen and (min-width: 768px){
+
+
+    .banners-padre{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+
+    
+}
+
+@media screen and (min-width: 1024px){
+
+
+    .banners-padre{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+    }
+
+
+    
+}
+
+
+footer{
+
+    grid-area: footer;
+    margin-top: 2rem;
+    background-color:#598234 ;
+
+}
+
+footer p{
+    font-size: 1.8rem;
+    padding: 2rem;
+}
+
+/*EDITANDO PAGINA PRODUCTOS*/
+
+
+#body-productos{
+
+
+    display: grid;
+    grid-template-areas: 
+    "cabecera"
+    "productos"
+    "footer"
+    ;
+    grid-template-columns: 1fr;
+    height: 100vh;
+}
+
+.gradiente{
+
+    background-image: linear-gradient(to bottom, #505160, #68829E);
+}
+
+
+
+
+
+#productos{
+    text-align: center;
+    margin-top: 3rem;
+    grid-area: productos;
+    
+}
+
+#productos h2{
+
+    font-size: 2.5rem;
+}
+
+
+
+
+
+/*editando card*/
+
+.card{
+    background-color: aqua;
+    margin: 3rem;
+    width: 30rem;
+    padding: 1rem;
+    position: relative;
+   
+    
+
+}
+
+.card p{
+    font-size: 1.5rem;
+}
+
+.card__titulo{
+
+    font-size: 1.8rem;
+}
+
+
+
+.card img{
+    width: 25rem;
+    height: 30rem;
+    margin: 2rem;
+
+}
+
+.card__descuento{
+    background-color: green;
+    width: 15rem;
+    color: #fff;
+    position: absolute;
+    top: 5rem;
+    left: 20rem;
+
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+
+    #productos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+    
+}
+
+
+@media screen and (min-width: 1024px) {
+    #productos{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        
+    }
+    
+    
+}
+
+
+/*clase 8 transormaciones*/
+
+.caja-padre{
+
+    background-color: #000;
+    width: 30rem;
+    height: 20rem;
+}
+
+.caja-hijo{
+    background-color: #fff;
+    width: 20rem;
+    height: 10rem;
+    margin: 4rem;
+    /*transform: rotatez(48deg);*/
+    /*transform: scale(2.1);*/
+    transform:skew(20deg, 10deg);
+
+}
+
+
+.skew-imgHeader{
+    transform:skew(20deg, 10deg);
+
+}
+
+
+.imagen-hijo{
+
+    width: 40rem;
+    height: 30rem;
+    margin: 3rem;
+
+    animation-duration: 3s;
+    animation-name: aparecer;
+    
+}
+
+
+@keyframes aparecer{
+
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+
+}
+
+
+
+
